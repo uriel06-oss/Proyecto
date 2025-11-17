@@ -1,8 +1,12 @@
 import tkinter as tk
 
+from LogicaYMetodos import Main, Nodos
+
 ventana_principal = tk.Tk()
 ancho = ventana_principal.winfo_screenwidth()  # obtiene el ancho de la pantalla
 alto = ventana_principal.winfo_screenheight()  # obtiene la altura de la pantalla
+icono_carpeta = tk.PhotoImage(file="InterfazGrafica/LogoCarpeta.png")
+icono_contraseña = tk.PhotoImage(file="InterfazGrafica/LogoContraseña.png")
 
 ancho_ventana = 600
 alto_ventana = 800
@@ -34,6 +38,40 @@ marco.pack()
 marco_Datos = tk.Frame(ventana_principal)
 marco_Datos.config(relief="solid", bg="#d596be", width=600, height=720)
 
+
+# bloques para contraseñas y carpetas
+def crearBloques(hijo):
+    bloque = tk.Frame(marco_Datos, width=550, height=80)
+    if isinstance(hijo, Nodos.Carpeta):
+        icono = icono_carpeta
+    else:
+        icono = icono_contraseña
+
+    boton = tk.Button(bloque, text=hijo.nombre, image=icono, compound="left")
+    boton.image = icono
+    # expand permite expansion, fill ejecuta la expansion
+    boton.pack(expand=True, fill="both")
+    bloque.pack_propagate(False)
+
+    return bloque
+
+
+# metodo para mostrar carpetas y contraseñas
+def mostrarCarpetasContraseñas(control):
+    # control.arbol ya es el arbol general y accede a su metodo mostrar hijos
+    hijos = control.arbol.mostrarHijos()
+    for hijo in hijos:
+        Boton1 = crearBloques(hijo)
+        Boton1.pack(pady=(10, 5))
+
+
+# objeto de tipo control
+ArbolDeCarpetasContraseñas = Main.Control()
+ArbolDeCarpetasContraseñas.main()
+mostrarCarpetasContraseñas(ArbolDeCarpetasContraseñas)
+
+
+marco_Datos.pack_propagate(False)
 marco_Datos.pack()
 ventana_principal.resizable(False, False)  # opion para que wayland no reescale
 ventana_principal.mainloop()

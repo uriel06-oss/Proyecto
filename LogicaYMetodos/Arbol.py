@@ -1,4 +1,4 @@
-import Nodos
+import LogicaYMetodos.Nodos as Nodos
 
 
 class ArbolGeneral:
@@ -30,6 +30,7 @@ class ArbolGeneral:
                 print("Carpeta:", hijos.nombre)
             else:
                 print("Contraseña:", hijos.nombre)  # hijos.nombre==hijos.sitioWeb
+        return carpetaRaiz.hijos  # regresa los hijos
 
     def eliminarCarpeta(self, carpetaEliminar):
         while carpetaEliminar.hijos:
