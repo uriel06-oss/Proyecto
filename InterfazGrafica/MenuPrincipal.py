@@ -5,8 +5,13 @@ from LogicaYMetodos import Main, Nodos
 ventana_principal = tk.Tk()
 ancho = ventana_principal.winfo_screenwidth()  # obtiene el ancho de la pantalla
 alto = ventana_principal.winfo_screenheight()  # obtiene la altura de la pantalla
+
 icono_carpeta = tk.PhotoImage(file="InterfazGrafica/LogoCarpeta.png")
 icono_contraseña = tk.PhotoImage(file="InterfazGrafica/LogoContraseña.png")
+icono_agregarContraseña = tk.PhotoImage(file="InterfazGrafica/agregarContraseña.png")
+icono_agregarCarpeta = tk.PhotoImage(file="InterfazGrafica/agregarCarpeta.png")
+icono_buscar = tk.PhotoImage(file="InterfazGrafica/buscar.png")
+icono_salir = tk.PhotoImage(file="InterfazGrafica/salida.png")
 
 ancho_ventana = 600
 alto_ventana = 800
@@ -19,18 +24,22 @@ ventana_principal.geometry(f"{ancho_ventana}x{alto_ventana}+{posicion_x}+{posici
 # barra de busqueda y botones
 marco = tk.Frame(ventana_principal)
 marco.config(relief="solid", bg="#2596be", width=600, height=80)
-boton_ingresarCarpeta = tk.Button(marco, text="Ingresar Carpeta")
-boton_ingresarContraseña = tk.Button(marco, text="Ingresar contraseña")
-boton_ParaBuscar = tk.Button(marco, text="Buscar")
+boton_ingresarCarpeta = tk.Button(marco, image=icono_agregarCarpeta, compound="center")
+boton_ingresarContraseña = tk.Button(
+    marco, image=icono_agregarContraseña, compound="center"
+)
+boton_salir = tk.Button(marco, image=icono_salir, compound="center")
+boton_ParaBuscar = tk.Button(marco, image=icono_buscar, compound="center")
 
 text = tk.Entry(marco, relief="solid")
 
 
 # pad para el espacio entre widgets y ipad para el relleno de widgets
-text.pack(side="left", ipady=8, padx=(10, 5))
+text.pack(side="left", ipady=8, padx=(25, 25))
 boton_ParaBuscar.pack(side="left", padx=(5, 10), ipadx=10, ipady=8)
-boton_ingresarContraseña.pack(side="right", padx=(10, 20), ipadx=0, ipady=8)
-boton_ingresarCarpeta.pack(side="right", padx=(10, 20), ipady=8)
+boton_salir.pack(side="left", padx=(35, 25), ipadx=10, ipady=8)
+boton_ingresarContraseña.pack(side="right", padx=(10, 25), ipadx=10, ipady=8)
+boton_ingresarCarpeta.pack(side="right", padx=(10, 35), ipady=8, ipadx=10)
 marco.pack_propagate(False)
 marco.pack()
 
