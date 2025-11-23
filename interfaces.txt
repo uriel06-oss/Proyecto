@@ -1,0 +1,19 @@
+Interfaces principales.
+
+
+Pantalla de inicio (solo para registrar al usuario por primera vez, una vez que se registre alguno pasa a la pantalla de login)
+Login:  pide el usuario y contraseña, si se equivoca solo muestra un pequeño banner que dice que el usuario o contraseña está incorrecto.
+Menú principal de la aplicación: En la parte de arriba muestra una barra de botones para añadir contraseñas o carpetas, barra de búsqueda y botón para salir de la aplicación. Debajo de esos botones se encontrarán las carpetas creadas y banners con los nombres de los sitios web o aplicaciones que fueron registrados al registrar una contraseña.
+Pantalla para agregar una nueva carpeta: Se le pedirá al usuario el nombre de la carpeta y en la parte de abajo habrá dos botones para uno para cancelar y salir al menú principal y otro para aceptar y volver al menú principal con la carpeta ya creada.
+Pantalla para agregar una nueva contraseña: Se le pedirá al usuario el nombre del sitio web o aplicación, usuario y contraseña. En la parte de abajo habrá dos botones para uno para cancelar y salir al menú principal y otro para aceptar y volver al menú principal con el banner que tiene el nombre de la web o app ya cargado.
+Pantalla para mostrar los datos de la contraseña: Al seleccionar un banner se mostrará el sitio web o aplicación que se registró así como su usuario y contraseña, en la parte de arriba solo estará el botón de borrar contraseña y editar la contraseña o otros datos.
+Pantalla para mostrar la carpeta: Tiene los mismos botones que el menú principal pero solo muestra  las contraseñas que fueron creadas en ese espacio, la búsqueda solo funcionara para las contraseñas guardadas ahí y en sus subcarpetas.
+
+Interfaces secundarias
+
+Interfaz para la búsqueda:  Le muestra una lista con los sitios web o app que tienen un nombre como el que busca.
+Interfaz para editar contraseña: Muestra los datos que registró para un sitio web o app y permite editarlos.
+Interfaz para eliminar contraseña:  Al seleccionar la opción de eliminar contraseña muestra un pequeño cartel para confirmar si quiere eliminar la contraseña.
+Interfaz para eliminar carpeta: Al seleccionar la opción de eliminar carpeta muestra un pequeño cartel para confirmar si quiere eliminar la carpeta.
+
+
