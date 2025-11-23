@@ -57,22 +57,7 @@ class ArbolGeneral:
 
         return busquedaRecursiva(self.raiz)
 
-def main():
-    arbol = ArbolGeneral()
-    arbol.agregarContraseña("hola.com","uriel","ton")
-    w = "hola.com"
-    p=arbol.buscarNodo(w)
-    print(arbol.buscarNodo("hola.com"))
-    print(p.usuario)
-    Nodos.mostrar_Nodo(p)
-    arbol.agregarContraseña("otro.com","fab","siu")
-    q ="otro.com"
-    a = arbol.buscarNodo(q)
-    print(a.usuario)
 
-    
-
-main()
 
 
 

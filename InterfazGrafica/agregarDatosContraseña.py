@@ -15,6 +15,13 @@ def abrir_ventana_contraseñas(ArbolDeCarpetasContraseñas, actualizarPantalla):
         usuarioObtenido = entrada2.get()
         contraseñaObtenido = entrada3.get()
 
+        with open("Contraseñas.txt","a") as arch:
+            arch.write(nombreObtenido+"\n")
+            arch.write(usuarioObtenido+"\n")
+            arch.write(contraseñaObtenido+"\n")
+            arch.write("----------------------------------\n")
+
+
         ArbolDeCarpetasContraseñas.arbol.agregarContraseña(
             nombreObtenido, usuarioObtenido, contraseñaObtenido
         )

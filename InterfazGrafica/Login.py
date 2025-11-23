@@ -18,7 +18,6 @@ def hover_out(btn):
 
 def validar(win):
 
-    
     usuario = win.entry_nombre.get().strip()
     contrasenia = win.entry_pass.get().strip()
     ruta = os.path.join(os.path.dirname(__file__),("login.txt"))
